@@ -25,7 +25,27 @@
 
       // other libraries
       'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+
+      'apollo-client':                      'npm:apollo-client/apollo.umd.js',
+      'apollo-client-rxjs':                 'npm:apollo-client-rxjs/build/bundles/apollo-rxjs.umd.js',
+      'apollo-angular':                     'npm:apollo-angular/build/bundles/apollo.umd.js',
+
+      'whatwg-fetch':                       'npm:whatwg-fetch',
+
+      'graphql-anywhere':                   'npm:graphql-anywhere',
+
+      'graphql-tag':                        'npm:graphql-tag',
+      'symbol-observable':                  'npm:symbol-observable',
+      'redux':                              'npm:redux/dist/redux.min.js',
+
+      'graphql':                            'npm:graphql',
+      'graphql-tools':                      'npm:graphql-tools',
+      'deprecated-decorator':               'npm:deprecated-decorator',
+      'node-uuid':                          'npm:node-uuid',
+      'uuid':                               'npm:uuid',
+      'iterall':                            'npm:iterall',
+      'lodash':                             'npm:lodash'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -34,7 +54,36 @@
       },
       rxjs: {
         defaultExtension: 'js'
-      }
+      },
+      'whatwg-fetch':               { main: './fetch.js', defaultExtension: 'js' },
+      'redux':                      { format: 'cjs', defaultExtension: 'js' },
+      'graphql-tag':                { main: './index.js', defaultExtension: 'js' },
+      'symbol-observable':          { main: './index.js', defaultExtension: 'js' },
+      'graphql-anywhere':           {
+        main: '/lib/src/index.js',
+        defaultExtension: 'js'
+      },
+      'graphql':     {
+        main: './index.js',
+        defaultExtension: 'js',
+        map: {
+          './type': './type/index.js',
+          './language': './language/index.js',
+          './execution': './execution/index.js',
+          './validation': './validation/index.js',
+          './error': './error/index.js',
+          './utilities': './utilities/index.js'
+        },
+      },
+      'graphql-tools':              {
+        main: '/dist/index.js',
+        defaultExtension: 'js'
+      },
+      'deprecated-decorator':       { main: '/bld/index.js', defaultExtension: 'js' },
+      'node-uuid':                  { main: './uuid.js', defaultExtension: 'js' },
+      'uuid':                       { main: './lib/rng-browser.js', defaultExtension: 'js' },
+      'iterall':                    { main: './index.js', defaultExtension: 'js' },
+      'lodash':                     { main: './index.js', defaultExtension: 'js' }
     }
   });
 })(this);
