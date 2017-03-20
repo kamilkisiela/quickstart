@@ -3,6 +3,10 @@ import { Router }            from '@angular/router';
 
 import { Hero }                from './hero';
 
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
+import { ApolloQueryResult } from 'apollo-client';
+
 @Component({
   moduleId: module.id,
   selector: 'my-heroes',
@@ -14,9 +18,24 @@ export class HeroesComponent implements OnInit {
   selectedHero: Hero;
 
   constructor(
+  private apollo: Apollo,
   private router: Router) { }
 
   getHeroes(): void {
+    console.log('getHerou');
+    this.apollo.watchQuery({
+      query: gql`
+        query allHeroes {
+          heroes {
+            id
+            name
+          }
+        }
+      `
+    }).subscribe((queryResult: ApolloQueryResult<{ heroes: Hero[] }>) => {
+      console.log('sdfdsf', queryResult.data);
+      this.heroes = queryResult.data.heroes;
+    });        
   }
 
   add(name: string): void {

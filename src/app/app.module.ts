@@ -16,12 +16,16 @@ import { HeroDetailComponent }  from './hero-detail.component';
 import { HeroService }          from './hero.service';
 import { HeroSearchComponent }  from './hero-search.component';
 
+import { ApolloModule } from 'apollo-angular';
+import { getClient } from './client';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
+    ApolloModule.forRoot(getClient),
     AppRoutingModule
   ],
   declarations: [

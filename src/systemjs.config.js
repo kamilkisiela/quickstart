@@ -39,6 +39,8 @@
       'symbol-observable':                  'npm:symbol-observable',
       'redux':                              'npm:redux/dist/redux.min.js',
 
+      'apollo-test-utils':                        'npm:apollo-test-utils',
+
       'graphql':                            'npm:graphql',
       'graphql-tools':                      'npm:graphql-tools',
       'deprecated-decorator':               'npm:deprecated-decorator',
@@ -58,6 +60,7 @@
       'whatwg-fetch':               { main: './fetch.js', defaultExtension: 'js' },
       'redux':                      { format: 'cjs', defaultExtension: 'js' },
       'graphql-tag':                { main: './index.js', defaultExtension: 'js' },
+      'apollo-test-utils':          { main: '/dist/src/index.js', defaultExtension: 'js' },
       'symbol-observable':          { main: './index.js', defaultExtension: 'js' },
       'graphql-anywhere':           {
         main: '/lib/src/index.js',
